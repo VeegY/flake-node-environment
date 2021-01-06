@@ -1,19 +1,22 @@
 {
   "scripts": {
-    "install-env": "npm run install-api-node && npm run install-routing-node && npm run install-dummy-client",
-    "install-api-node": "cd ./flake-api-node && npm install && cd ..",
-    "install-routing-node": "cd ./flake-routing-node && npm install && cd ..",
-    "install-dummy-client": "cd ./flake-dummy-client && npm install && cd ..",
-    "compile-env": "npm run compile-api-node && npm run compile-routing-node && npm run compile-dummy-client",
-    "compile-api-node": "cd ./flake-api-node && gulp default && cd ..",
-    "compile-routing-node": "cd ./flake-routing-node && gulp default && cd ..",
-    "compile-dummy-client": "cd ./flake-dummy-client && gulp default && cd ..",
-    "start-test-env": "",
-    "start-routing-node-1": "cd ./flake-routing-node && cross-env PORT=9985 NODE_ENV='development' node dist/index.js",
-    "start-routing-node-2": "cd ./flake-routing-node && cross-env PORT=9986 NODE_ENV='development' node dist/index.js"
-
+    "install:env": "npm-run-all -s install:api-node install:routing-node && install:dummy-client",
+    "install:api-node": "cd ./flake-api-node && npm install && cd ..",
+    "install:routing-node": "cd ./flake-routing-node && npm install && cd ..",
+    "install:dummy-client": "cd ./flake-dummy-client && npm install && cd ..",
+    "compile:env": "npm-run-all -s compile:api-node compile:routing-node && compile:dummy-client",
+    "compile:api-node": "cd ./flake-api-node && gulp default && cd ..",
+    "compile:routing-node": "cd ./flake-routing-node && gulp default && cd ..",
+    "compile:dummy-client": "cd ./flake-dummy-client && gulp default && cd ..",
+    "start:test-env": "npm-run-all -p -l -n start:routing-node-1 start:routing-node-2",
+    "start:routing-node-1": "cd ./flake-routing-node && cross-env PORT=9985 NODE_ENV='development' node dist/index.js",
+    "start:routing-node-2": "cd ./flake-routing-node && cross-env PORT=9986 NODE_ENV='development' node dist/index.js",
+    "start:clients": "npm-run-all -p -l -n start:client-1 start:client-2",
+    "start:client-1": "cd ./flake-dummy-client && node dist/index.js --config=config/port_9985.json",
+    "start:client-2": "cd ./flake-dummy-client && node dist/index.js --config=config/port_9986.json"
   },
   "dependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5"
   }
 }
