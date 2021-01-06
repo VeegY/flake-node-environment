@@ -10,7 +10,7 @@
     "compile-dummy-client": "cd ./flake-dummy-client && gulp default && cd ..",
     "start-test-env": "",
     "start-routing-node-1": "cd ./flake-routing-node && cross-env PORT=9985 NODE_ENV='development' node dist/index.js",
-    "start-routing-node-2": "cd ./flake-routing-node && cross-env PORT=9986 NODE_ENV='development' node dist/index.js",
+    "start-routing-node-2": "cd ./flake-routing-node && cross-env PORT=9986 NODE_ENV='development' node dist/index.js"
 
   },
   "dependencies": {
