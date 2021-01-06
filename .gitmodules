@@ -1,0 +1,9 @@
+[submodule "flake-routing-node"]
+	path = flake-routing-node
+	url = https://github.com/imagineon/flake-routing-node.git
+[submodule "flake-dummy-client"]
+	path = flake-dummy-client
+	url = https://github.com/imagineon/flake-dummy-client.git
+[submodule "flake-api-node"]
+	path = flake-api-node
+	url = https://github.com/imagineon/flake-api-node.git
