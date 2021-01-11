@@ -5,7 +5,7 @@
     "install:api-node": "cd ./flake-api-node && npm install && cd ..",
     "install:routing-node": "cd ./flake-routing-node && npm install && cd ..",
     "install:dummy-client": "cd ./flake-dummy-client && npm install && cd ..",
-    "compile:env": "npm-run-all -s compile:api-node compile:routing-node && compile:dummy-client",
+    "compile:env": "npm-run-all -s compile:api-node compile:routing-node compile:dummy-client",
     "compile:api-node": "cd ./flake-api-node && gulp default && cd ..",
     "compile:routing-node": "cd ./flake-routing-node && gulp default && cd ..",
     "compile:dummy-client": "cd ./flake-dummy-client && gulp default && cd ..",
