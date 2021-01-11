@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "install:env": "npm-run-all -s install:api-node install:routing-node && install:dummy-client",
+    "complete:env": "npm-run-all -s install:env compile:env start:test-env",
+    "install:env": "npm-run-all -s install:api-node install:routing-node install:dummy-client",
     "install:api-node": "cd ./flake-api-node && npm install && cd ..",
     "install:routing-node": "cd ./flake-routing-node && npm install && cd ..",
     "install:dummy-client": "cd ./flake-dummy-client && npm install && cd ..",
